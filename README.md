@@ -1,5 +1,5 @@
 ### 說明 ###
-Laravel 套件，台灣藍新金流(智付通)企業會員金流串接
+Laravel 套件，台灣藍新金流(智付通)企業會員金流串接  
 Packagist：https://packagist.org/packages/datomon/laravel-newebpay
 - Laravel 版本需求：5.5 以上
 - 藍新金流程式版本：1.5
