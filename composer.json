@@ -2,8 +2,7 @@
     "name": "datomon/laravel-newebpay",
     "description": "台灣藍新金流(智付通)企業會員金流串接",
     "require": {
-        "php": "^7.0.0",
-        "laravel/framework": "~5.5"
+        "php": "^7.0.0"
     },
     "autoload": {
         "psr-4": {
