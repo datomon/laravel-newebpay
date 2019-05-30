@@ -57,9 +57,9 @@ Laravel 套件，台灣藍新金流(智付通)企業會員金流串接
         ... 頁面其他資料的變數，以下省略 ...
     ]);
 
-    交易資料參數必填的欄位，只剩範例中 MerchantOrderNo、Amt、ItemDesc、Email 這四項需要指定  
-    可選參數，像是返回商店按鈕的連結網址、限制信用卡分期的期數等等，依你專案需要額外去指定  
-    各項交易資料的參數名稱，皆與官方文件相同
+    註1：交易資料參數必填的欄位，只剩範例中 MerchantOrderNo、Amt、ItemDesc、Email 這四項需要指定  
+    註2：可選參數，像是返回商店按鈕的連結網址、限制信用卡分期的期數等等，依你專案需要額外去指定  
+    註3：各項交易資料的參數名稱，皆與官方文件相同
 (2)前端呈現訂單資料的頁面中，把按鈕元件放在你想要的位置即可
 
     @component('newebpay::tradeButton', [
@@ -68,7 +68,7 @@ Laravel 套件，台灣藍新金流(智付通)企業會員金流串接
     ])
     @endcomponent
 
-    按鈕的 HTML Tag，可以依你的喜好去更改，直接修改 button 的值即可
+    註：按鈕的 HTML Tag，可以依你的喜好去更改，直接修改 button 的值即可
 (3)取號完成轉址的 blade 模版名稱(不須副檔名 .blade.php)，請直接設定在 .env 檔的「NEWEBPAY_CUSTOMER_BLADE」參數。從藍新傳來的資料都會在 $log 這個 Eloquent 實例中(它查詢了 newebpay_customers 資料表)，你可以在自己的 blade 模版使用此物件。例如：
 
     <li>取號狀態及錯誤代碼：{{ $log->Status }}</li>
