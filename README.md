@@ -79,27 +79,24 @@ Packagist：https://packagist.org/packages/datomon/laravel-newebpay
     <li>商店代號：{{ $log->MerchantID }}</li>
     <li>繳費截止日期：{{ $log->ExpireDate }}</li>
     <li>支付方式：{{ $log->PaymentType }}</li>
+
 ### 其他 ###
 (1)此套件有提供測試交易資料的表單，供你填部份欄位來擬模交易的流程，配合官方文件了解一些交易資料參數的用處  
 請修改 .env 檔中下列的參數：
 
-    (1)NEWEBPAY_ENV 的值設為 dev
+    (1)NEWEBPAY_ENV 的值設為 dev (要關閉此測試表單，把此值設為 prod 即可)
     (2)NEWEBPAY_MERCHANT_ID、NEWEBPAY_HASH_KEY、NEWEBPAY_HASH_IV 要設為藍新測試站商店的資料
     (3)APP_URL 的值要設定專案的域名
+    (4)NEWEBPAY_CUSTOMER_BLADE 的值要用測試的模版名 newebpay::testCustomerRes
 之後瀏覽器連結：
 
-    你的網域/newebpay/test/tradeForm
-(2)取號完成後，若要看此套件預設的轉址頁面，測試交易資料的表單「CustomerURL」欄位的值請輸入：
-
-    你的網域/api/newebpay/receive/customerRes  
-
-    註：.env 檔「NEWEBPAY_CUSTOMER_BLADE」參數的值記得要用測試的模版名 newebpay::testCustomerRes  
-(3)支付完成的記錄在 newebpay_notifies 資料表中，控制器中可以用 Eloquent 的方式讀取資料，例如：
+    你的網域/newebpay/test/tradeForm 
+(2)支付完成的記錄在 newebpay_notifies 資料表中，控制器中可以用 Eloquent 的方式讀取資料，例如：
 
     use Datomon\LaravelNewebpay\Models\NewebpayNotify;
 
     $notify = NewebpayNotify::all();
-(4)取號完成的記錄在 newebpay_customers 資料表中，你控制器可以用 Eloquent 的方式讀取資料，例如：
+(3)取號完成的記錄在 newebpay_customers 資料表中，你控制器可以用 Eloquent 的方式讀取資料，例如：
 
     use Datomon\LaravelNewebpay\Models\NewebpayCustomer;
 
