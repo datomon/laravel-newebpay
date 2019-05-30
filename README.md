@@ -1,5 +1,5 @@
 ### 說明 ###
-台灣藍新金流(智付通)企業會員金流串接
+Laravel 套件，台灣藍新金流(智付通)企業會員金流串接
 - Laravel 版本需求：5.5 以上
 - 藍新金流程式版本：1.5
 - 官方API文件下載：https://www.newebpay.com/website/Page/content/download_api
@@ -16,13 +16,13 @@
 - 其他本套件未說明之事項(例如：交易流程、錯誤代碼的含義)，請參考官方API文件。
 
 ### 安裝步驟 ###
-(1)安裝套件
+(1)安裝套件  
     composer require datomon/laravel-newebpay
 
-(2)建立資料表
+(2)建立資料表  
     php artisan migrate
 
-(3)設定藍新金流的商店資訊參數到 .env 檔
+(3)設定藍新金流的商店資訊參數到 .env 檔  
     php artisan newebpay:init  
 
 ### 用法 ###
