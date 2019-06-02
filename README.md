@@ -1,6 +1,5 @@
 ### 說明 ###
 Laravel 套件，台灣藍新金流(智付通)企業會員金流串接  
-Packagist：https://packagist.org/packages/datomon/laravel-newebpay
 - Laravel 版本需求：5.5 以上
 - 藍新金流程式版本：1.5
 - 官方API文件下載：https://www.newebpay.com/website/Page/content/download_api
@@ -70,7 +69,7 @@ Packagist：https://packagist.org/packages/datomon/laravel-newebpay
     @endcomponent
 
     註：按鈕的 HTML Tag，可以依你的喜好去更改，直接修改 button 的值即可
-(3)取號完成轉址的 blade 模版名稱(不須副檔名 .blade.php)，請直接設定在 .env 檔的「NEWEBPAY_CUSTOMER_BLADE」參數。從藍新傳來的資料都會在 $log 這個 Eloquent 實例中(它查詢了 newebpay_customers 資料表)，你可以在自己的 blade 模版使用此物件。例如：
+(3)取號完成轉址的 blade 模版名稱(不須副檔名 .blade.php)，請直接設定在 .env 檔的「NEWEBPAY_CUSTOMER_BLADE」參數。從藍新傳來的資料都會在 $log 這個 Eloquent 實例中(它查詢了 newebpay_customers 資料表)，你可以在自己的 blade 使用此物件。例如：
 
     <li>取號狀態及錯誤代碼：{{ $log->Status }}</li>
     <li>訂單編號：{{ $log->MerchantOrderNo }}</li>
